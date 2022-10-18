@@ -1,13 +1,20 @@
 package main;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
 
     public static void main(String[] args) {
         JFrame frame=new JFrame("Calculator");
+        frame.setVisible(true);
         JTextField text=new JTextField();
-        text.setBounds(10,11,300,30);
+        text.setBounds(10,20,270,40);
+        text.setHorizontalAlignment(SwingConstants.RIGHT);
+        text.setEditable(false);
+        text.setBackground(Color.white);
 
 
         JButton b1=new JButton("1");
@@ -30,29 +37,113 @@ public class Main {
         JButton bequal=new JButton("=");
 
 
-        bclear.setBounds(10,81,130,60);
-        bper.setBounds(150,81,60,60);
-        b1.setBounds(10,151,60,60);
-        b2.setBounds(80,151,60,60);
-        b3.setBounds(150,151,60,60);
-        b4.setBounds(10,221,60,60);
-        b5.setBounds(80,221,60,60);
-        b6.setBounds(150,221,60,60);
-        b7.setBounds(10,291,60,60);
-        b8.setBounds(80,291,60,60);
-        b9.setBounds(150,291,60,60);
-        b0.setBounds(10,361,130,60);
-        bdot.setBounds(150,361,60,60);
-        bdivide.setBounds(220,81,60,60);
-        bx.setBounds(220,151,60,60);
-        bplus.setBounds(220,221,60,60);
-        bminus.setBounds(220,291,60,60);
-        bequal.setBounds(220,361,60,60);
+        bclear.setBounds(10,80,130,60);
+        bper.setBounds(150,80,60,60);
+        b1.setBounds(10,150,60,60);
+        b2.setBounds(80,150,60,60);
+        b3.setBounds(150,150,60,60);
+        b4.setBounds(10,220,60,60);
+        b5.setBounds(80,220,60,60);
+        b6.setBounds(150,220,60,60);
+        b7.setBounds(10,290,60,60);
+        b8.setBounds(80,290,60,60);
+        b9.setBounds(150,290,60,60);
+        b0.setBounds(10,360,130,60);
+        bdot.setBounds(150,360,60,60);
+        bdivide.setBounds(220,80,60,60);
+        bx.setBounds(220,150,60,60);
+        bplus.setBounds(220,220,60,60);
+        bminus.setBounds(220,290,60,60);
+        bequal.setBounds(220,360,60,60);
+
+        b0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+        b9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(text.getText()+e.getActionCommand());
+            }
+        });
+
+//        bdot.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                text.setText(text.getText()+e.getActionCommand());
+//            }
+//        });
+        bclear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText("");
+            }
+        });
 
 
 
-        frame.setSize(400,500);
-        frame.setVisible(true);
+
+
+        frame.setSize(320,500);
         frame.setLayout(null);
         frame.add(b1);
         frame.add(b2);
@@ -76,4 +167,5 @@ public class Main {
         frame.add(text);
 
     }
+
 }
