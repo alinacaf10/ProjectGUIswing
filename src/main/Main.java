@@ -6,11 +6,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main {
+    private static JTextField text;
+    private static double answer;
+    private static double number;
+    static int operation;
+    public static void calc(){
+        switch (operation){
+            case 1:
+                answer=number+Double.parseDouble(text.getText());
+                text.setText(Double.toString(answer));
+                break;
+            case 2:
+                answer=number-Double.parseDouble(text.getText());
+                text.setText(Double.toString(answer));
+                break;
+            case 3:
+                answer=number/Double.parseDouble(text.getText());
+                text.setText(Double.toString(answer));
+                break;
+            case 4:
+                answer=number*Double.parseDouble(text.getText());
+                text.setText(Double.toString(answer));
+                break;
+        }
+    }
 
     public static void main(String[] args) {
         JFrame frame=new JFrame("Calculator");
         frame.setVisible(true);
-        JTextField text=new JTextField();
+        text=new JTextField();
         text.setBounds(10,20,270,40);
         text.setHorizontalAlignment(SwingConstants.RIGHT);
         text.setEditable(false);
@@ -32,7 +56,7 @@ public class Main {
         JButton bper=new JButton("%");
         JButton bplus=new JButton("+");
         JButton bminus=new JButton("-");
-        JButton bx=new JButton("x");
+        JButton bx=new JButton("*");
         JButton bdivide=new JButton("/");
         JButton bequal=new JButton("=");
 
@@ -136,6 +160,44 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 text.setText("");
+            }
+        });
+        bplus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                number=Double.parseDouble(text.getText());
+                operation=1;
+                text.setText(e.getActionCommand());
+            }
+        });
+        bminus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                number=Double.parseDouble(text.getText());
+                operation=2;
+                text.setText(e.getActionCommand());
+            }
+        });
+        bdivide.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                number=Double.parseDouble(text.getText());
+                operation=3;
+                text.setText(e.getActionCommand());
+            }
+        });
+        bx.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                number=Double.parseDouble(text.getText());
+                operation=4;
+                text.setText(e.getActionCommand());
+            }
+        });
+        bequal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calc();
             }
         });
 
