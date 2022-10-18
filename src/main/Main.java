@@ -32,9 +32,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         JFrame frame=new JFrame("Calculator");
         JLabel label=new JLabel();
-        label.setBounds(270,5,10,10);
+        label.setBounds(10,5,270,10);
+        label.setHorizontalAlignment(SwingConstants.RIGHT);
         frame.setVisible(true);
         text=new JTextField();
         text.setBounds(10,20,270,40);
@@ -153,11 +155,24 @@ public class Main {
         });
 
 //        bdot.addActionListener(new ActionListener() {
+//
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
-//                text.setText(text.getText()+e.getActionCommand());
+//                String test[]=text.getText().split("");
+//                for (int i=0;i<test.length;i++) {
+//                    if (test[i]!=".") {
+//                        text.setText(text.getText() + e.getActionCommand());
+//                    }
+//                }
+//
 //            }
 //        });
+        bper.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                text.setText(String.valueOf((Double.parseDouble(text.getText())/100)));
+            }
+        });
         bclear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -170,7 +185,7 @@ public class Main {
                 number=Double.parseDouble(text.getText());
                 operation=1;
                 text.setText("");
-                label.setText(e.getActionCommand());
+                label.setText(number+e.getActionCommand());
             }
         });
         bminus.addActionListener(new ActionListener() {
@@ -179,7 +194,7 @@ public class Main {
                 number=Double.parseDouble(text.getText());
                 operation=2;
                 text.setText("");
-                label.setText(e.getActionCommand());
+                label.setText(number+e.getActionCommand());
 
 
             }
@@ -190,7 +205,7 @@ public class Main {
                 number=Double.parseDouble(text.getText());
                 operation=3;
                 text.setText("");
-                label.setText(e.getActionCommand());
+                label.setText(number+e.getActionCommand());
 
 
             }
@@ -201,7 +216,7 @@ public class Main {
                 number=Double.parseDouble(text.getText());
                 operation=4;
                 text.setText("");
-                label.setText(e.getActionCommand());
+                label.setText(number+e.getActionCommand());
 
 
             }
