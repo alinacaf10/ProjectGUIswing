@@ -33,6 +33,8 @@ public class Main {
 
     public static void main(String[] args) {
         JFrame frame=new JFrame("Calculator");
+        JLabel label=new JLabel();
+        label.setBounds(270,5,10,10);
         frame.setVisible(true);
         text=new JTextField();
         text.setBounds(10,20,270,40);
@@ -167,7 +169,8 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 number=Double.parseDouble(text.getText());
                 operation=1;
-                text.setText(e.getActionCommand());
+                text.setText("");
+                label.setText(e.getActionCommand());
             }
         });
         bminus.addActionListener(new ActionListener() {
@@ -175,7 +178,10 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 number=Double.parseDouble(text.getText());
                 operation=2;
-                text.setText(e.getActionCommand());
+                text.setText("");
+                label.setText(e.getActionCommand());
+
+
             }
         });
         bdivide.addActionListener(new ActionListener() {
@@ -183,7 +189,10 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 number=Double.parseDouble(text.getText());
                 operation=3;
-                text.setText(e.getActionCommand());
+                text.setText("");
+                label.setText(e.getActionCommand());
+
+
             }
         });
         bx.addActionListener(new ActionListener() {
@@ -191,18 +200,20 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 number=Double.parseDouble(text.getText());
                 operation=4;
-                text.setText(e.getActionCommand());
+                text.setText("");
+                label.setText(e.getActionCommand());
+
+
             }
         });
         bequal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 calc();
+                label.setText(e.getActionCommand());
+
             }
         });
-
-
-
 
 
         frame.setSize(320,500);
@@ -226,6 +237,7 @@ public class Main {
         frame.add(bx);
         frame.add(bequal);
 
+        frame.add(label);
         frame.add(text);
 
     }
