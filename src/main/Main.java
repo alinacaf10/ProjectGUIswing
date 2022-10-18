@@ -154,19 +154,14 @@ public class Main {
             }
         });
 
-//        bdot.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                String test[]=text.getText().split("");
-//                for (int i=0;i<test.length;i++) {
-//                    if (test[i]!=".") {
-//                        text.setText(text.getText() + e.getActionCommand());
-//                    }
-//                }
-//
-//            }
-//        });
+        bdot.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                    text.setText(text.getText()+e.getActionCommand());
+
+            }
+        });
         bper.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
